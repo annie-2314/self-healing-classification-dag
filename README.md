@@ -6,12 +6,69 @@ This project implements a robust sentiment classification CLI application using 
 It performs inference using a primary model, evaluates confidence, and triggers fallback (via a user or a backup model) when necessary — prioritizing correctness over blind automation.
 
 ---
+## 📸 Screenshots
+
+### 1. Single or Multiple Input Options
+This screen shows that the app allows both single and multiple text inputs for classification.
+
+![Single or Multiple Inputs](assets/Single%20or%20Multiple%20Input%20Options.png)
+
+---
+
+### 2. Single Input Classification Output
+After providing a single input, the app returns the predicted label with high accuracy.
+
+![Single Input Output](assets/Single%20Input%20Classification%20Output.png)
+
+---
+
+### 2A. Single Input Output Display
+This screenshot displays how the single input prediction is rendered clearly in the UI.
+
+![Single Input Output Display](assets/single%20input%20output.png)
+
+---
+
+### 3. Multiple Inputs Classification Output
+Here, multiple sentences were input, and the app successfully predicted labels for each.
+
+![Multiple Inputs Output](assets/Multiple%20Inputs%20Classification%20Output.png)
+
+---
+
+### 4. Graph Generated from All Inputs
+The output visualization is presented in a graph format to show label distribution or confidence scores.
+
+![Graph Output](assets/Graph%20Generated%20from%20All%20Inputs.png)
+
+---
+
+### 5. Training Process Screenshot
+This screenshot captures the model training phase, showing loss reduction and metrics improvement.
+
+![Training Process](assets/Training%20Process%20Screenshot.png)
+
+---
+
+### 6. CLI Output - Running `cli.py`
+This shows the command-line output after executing the `cli.py` script, classifying input text via terminal.
+
+![CLI Output 1](assets/CLI%20Output%20-%20Running%201.png)  
+![CLI Output 2](assets/CLI%20Output%20-%20Running%202.png)
+
+
+
+## 🎥 Video Demo
+
+Watch the full demo of the project in action:
+
+🔗 [Click here to view the demo video](https://your-video-link.com)
 
 ## 📁 Project Structure
 
 ```
 .
-├── cli.py                     # Main CLI interface
+├── cli.py                    # Main CLI interface
 ├── model_utils.py            # Inference and backup model loading
 ├── nodes.py                  # LangGraph nodes: ConfidenceCheck, Fallback
 ├── fine_tuned_model/         # Pre-trained model directory (local or from HF)
@@ -128,7 +185,7 @@ Fallback Stats:
 | ✅ Source Code            | ✔️ All scripts provided |
 | ✅ README.md              | ✔️ You're reading it |
 | ✅ logs.txt               | Auto-generated |
-| ✅ Demo video (optional)  | Add separately |
+| ✅ Demo video              | [Link] |
 
 ---
 
@@ -164,3 +221,4 @@ huggingface_hub
 Project for: *LangGraph AI Challenge*
 
 ---
+ 
