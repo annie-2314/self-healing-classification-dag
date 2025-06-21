@@ -1,4 +1,4 @@
-transformers==4.36.2
+transformers==4.33.3
 tokenizers==0.13.3
 sentencepiece==0.1.99
 torch==2.2.2
