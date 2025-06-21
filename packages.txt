@@ -1,4 +1,4 @@
-rustc
+pkg-config
 cmake
-build-essential
-
+rust
+rustup
