@@ -23,24 +23,7 @@ if "ready_for_graph" not in st.session_state:
 if "single_input_state" not in st.session_state:
     st.session_state.single_input_state = None  # To store the current single input state
 
-# === CSS Styling ===
-st.markdown("""
-    <style>
-    .final-box {
-        background-color: #eaf9ea;
-        border-left: 5px solid #33cc33;
-        padding: 10px;
-        margin: 10px 0;
-        font-weight: bold;
-    }
-    .user-box {
-        background-color: #e6f0ff;
-        border-left: 5px solid #3399ff;
-        padding: 10px;
-        margin: 10px 0;
-    }
-    </style>
-""", unsafe_allow_html=True)
+# **CSS Styling removed: .final-box { background-color: #eaf9ea; border-left: 5px solid #33cc33; padding: 10px; margin: 10px 0; font-weight: bold; } .user-box { background-color: #e6f0ff; border-left: 5px solid #3399ff; padding: 10px; margin: 0px 0; }**
 
 # === UI Layout ===
 st.set_page_config(page_title="Self-Healing Classifier", layout="centered")
