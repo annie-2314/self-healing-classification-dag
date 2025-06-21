@@ -6,55 +6,58 @@ This project implements a robust sentiment classification CLI application using 
 It performs inference using a primary model, evaluates confidence, and triggers fallback (via a user or a backup model) when necessary — prioritizing correctness over blind automation.
 
 ---
-## 📸 Screenshots
-
-### 1. Single or Multiple Input Options
-This screen shows that the app allows both single and multiple text inputs for classification.
-
-![Single or Multiple Inputs](assets/Single%20or%20Multiple%20Input%20Options.png)
+## 📸 Project Screenshots
 
 ---
 
-### 2. Single Input Classification Output
-After providing a single input, the app returns the predicted label with high accuracy.
-
-![Single Input Output](assets/Single%20Input%20Classification%20Output.png)
-
----
-
-### 2A. Single Input Output Display
-This screenshot displays how the single input prediction is rendered clearly in the UI.
-
-![Single Input Output Display](assets/single%20input%20output.png)
-
----
-
-### 3. Multiple Inputs Classification Output
-Here, multiple sentences were input, and the app successfully predicted labels for each.
-
-![Multiple Inputs Output](assets/Multiple%20Inputs%20Classification%20Output.png)
-
----
-
-### 4. Graph Generated from All Inputs
-The output visualization is presented in a graph format to show label distribution or confidence scores.
-
-![Graph Output](assets/Graph%20Generated%20from%20All%20Inputs.png)
-
----
-
-### 5. Training Process Screenshot
+### 1. Training Process Screenshot
 This screenshot captures the model training phase, showing loss reduction and metrics improvement.
 
 ![Training Process](assets/Training%20Process%20Screenshot.png)
 
 ---
 
-### 6. CLI Output - Running `cli.py`
-This shows the command-line output after executing the `cli.py` script, classifying input text via terminal.
+### 2. CLI Output - Running `cli.py`
+These screenshots show the command-line execution of the `cli.py` script, including predicted labels, fallback logic, and user clarification for low-confidence predictions.
 
 ![CLI Output 1](assets/CLI%20Output%20-%20Running%201.png)  
 ![CLI Output 2](assets/CLI%20Output%20-%20Running%202.png)
+
+---
+
+### 3. Single or Multiple Input Options
+This screen shows that the UI allows both single and multiple text inputs for classification.
+
+![Single or Multiple Inputs](assets/Single%20or%20Multiple%20Input%20Options.png)
+
+---
+
+### 4. Single Input Classification Output
+After providing a single input, the app returns the predicted label with high accuracy.
+
+![Single Input Output](assets/Single%20Input%20Classification%20Output.png)
+
+---
+
+### 4A. Single Input Output Display
+This screenshot displays how the single input prediction is rendered clearly in the UI.
+
+![Single Input Output Display](assets/single%20input%20output.png)
+
+---
+
+### 5. Multiple Inputs Classification Output
+Here, multiple sentences were input, and the app successfully predicted labels for each.
+
+![Multiple Inputs Output](assets/Multiple%20Inputs%20Classification%20Output.png)
+
+---
+
+### 6. Graph Generated from All Inputs
+The output visualization is presented in a graph format to show label distribution or confidence scores.
+
+![Graph Output](assets/Graph%20Generated%20from%20All%20Inputs.png)
+
 
 
 
@@ -209,16 +212,3 @@ huggingface_hub
 
 ---
 
-## 📽️ Demo Video
-
-📺 *[Add YouTube or Drive link here]*
-
----
-
-## 🧑‍💻 Author
-
-**Your Name** – `your.email@example.com`  
-Project for: *LangGraph AI Challenge*
-
----
- 
