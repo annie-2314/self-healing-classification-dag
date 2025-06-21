@@ -8,7 +8,7 @@ It performs inference using a primary model, evaluates confidence, and triggers 
 
 Watch the full demo of the project in action:
 
-🔗 [Click here to view the demo video](https://www.loom.com/share/c8e37178b1cd412c97bcac04c7ddc477?sid=9a163371-3f8a-4e00-8b2f-7f9ace34bab4)
+🔗 [Click here to view the demo video](https://www.loom.com/share/d9b1389cb52045109932663fd5418841?sid=ff227e8f-e28f-46b8-878c-54c55feb7f36)
 
 ---
 
