@@ -8,13 +8,16 @@ It performs inference using a primary model, evaluates confidence, and triggers 
 
 Watch the full demo of the project in action:
 
-🔗 [Click here to view the demo video]([https://your-video-link.com](https://www.loom.com/share/c8e37178b1cd412c97bcac04c7ddc477?sid=9a163371-3f8a-4e00-8b2f-7f9ace34bab4))
+🔗 [Click here to view the demo video](https://www.loom.com/share/c8e37178b1cd412c97bcac04c7ddc477?sid=9a163371-3f8a-4e00-8b2f-7f9ace34bab4)
+
+---
 
 ## 🚀 Live Demo
 
 You can explore the optional Streamlit UI for this project at the link below:
 
-🔗 **[Launch the Live App]([https://your-deployment-link.com](https://self-healing-classification-dag-cjmz7mvi5mytysocaztzsw.streamlit.app/))**
+🔗 **[Launch the Live App](https://self-healing-classification-dag-cjmz7mvi5mytysocaztzsw.streamlit.app/)**
+
 
 > 💡 Note: The primary interface for this project is via the command-line (`cli.py`). The web UI is provided as an additional enhancement for demonstration and multi-input testing.
 
