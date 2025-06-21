@@ -55,6 +55,11 @@ source env/bin/activate     # On Windows: env\Scripts\activate
 
 ```bash
 pip install -r requirements.txt
+
+ If you face version conflicts, run the following command to explicitly install compatible versions:
+
+ pip install transformers==4.41.1 sentence-transformers==4.1.0
+
 ```
 
 ### 4. Use Fine-Tuned Model
