@@ -4,6 +4,20 @@
 This project implements a robust sentiment classification CLI application using a fine-tuned Transformer model and a self-healing mechanism powered by LangGraph.
 
 It performs inference using a primary model, evaluates confidence, and triggers fallback (via a user or a backup model) when necessary — prioritizing correctness over blind automation.
+## 🎥 Video Demo
+
+Watch the full demo of the project in action:
+
+🔗 [Click here to view the demo video]([https://your-video-link.com](https://www.loom.com/share/c8e37178b1cd412c97bcac04c7ddc477?sid=9a163371-3f8a-4e00-8b2f-7f9ace34bab4))
+
+## 🚀 Live Demo
+
+You can explore the optional Streamlit UI for this project at the link below:
+
+🔗 **[Launch the Live App]([https://your-deployment-link.com](https://self-healing-classification-dag-cjmz7mvi5mytysocaztzsw.streamlit.app/))**
+
+> 💡 Note: The primary interface for this project is via the command-line (`cli.py`). The web UI is provided as an additional enhancement for demonstration and multi-input testing.
+
 
 ---
 ## 📸 Project Screenshots
@@ -61,11 +75,7 @@ The output visualization is presented in a graph format to show label distributi
 
 
 
-## 🎥 Video Demo
 
-Watch the full demo of the project in action:
-
-🔗 [Click here to view the demo video](https://your-video-link.com)
 
 ## 📁 Project Structure
 
@@ -188,7 +198,7 @@ Fallback Stats:
 | ✅ Source Code            | ✔️ All scripts provided |
 | ✅ README.md              | ✔️ You're reading it |
 | ✅ logs.txt               | Auto-generated |
-| ✅ Demo video              | [Link] |
+| ✅ Demo video              | 🔗 [Click here to view the demo video]([https://your-video-link.com](https://www.loom.com/share/c8e37178b1cd412c97bcac04c7ddc477?sid=9a163371-3f8a-4e00-8b2f-7f9ace34bab4)) |
 
 ---
 
@@ -203,11 +213,19 @@ Fallback Stats:
 ## 📦 Requirements
 
 ```
-transformers
-torch
-langgraph
-matplotlib
-huggingface_hub
+streamlit>=1.38.0
+transformers>=4.45.0
+tokenizers>=0.19.1
+torch>=2.0.0
+langgraph==0.2.28
+langgraph-checkpoint==1.0.12
+huggingface_hub>=0.23.0
+matplotlib>=3.7.0
+scikit-learn>=1.3.0
+sentencepiece==0.2.0
+accelerate>=0.28.0
+peft>=0.10.0
+python-dotenv>=1.0.1
 ```
 
 ---
