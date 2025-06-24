@@ -1,9 +1,25 @@
-env/ 
-__pycache__/ 
-*.dll 
-*.lib 
-*.pkl 
-*.zip 
-*.csv 
-.DS_Store 
-*.ipynb_checkpoints 
+# Ignore virtual environments
+venv/
+env/
+
+# Ignore compiled files
+*.pyc
+__pycache__/
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore notebooks checkpoints
+.ipynb_checkpoints/
+
+# Ignore large model binaries
+*.dll
+*.lib
+*.pyd
+
+# Ignore data
+*.zip
+*.tar.gz
+*.h5
+*.pt
