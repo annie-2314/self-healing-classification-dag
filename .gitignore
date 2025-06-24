@@ -1,4 +1,11 @@
-env/ 
-venv/ 
-__pycache__/ 
-*.pyc 
+output.mp4
+*.pt
+*.mp4
+*.mp4
+*.pt
+output.mp4
+15sec_input_720p.mp4
+yolov11_model.pt
+output.mp4
+15sec_input_720p.mp4
+yolov11_model.pt

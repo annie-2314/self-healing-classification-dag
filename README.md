@@ -1,235 +1,168 @@
-# 🧠 Self-Healing Classification DAG with Fine-Tuned Model
+# Player Re-Identification Project
 
+This project implements a player re-identification system using YOLO for object detection and `boxmot`/`ByteTrack` for multi-object tracking. It processes a 15-second video (`15sec_input_720p.mp4`), detects every player, assigns unique IDs, and maintains those IDs when players leave and re-enter the frame. The output is saved as `output.mp4` with annotated bounding boxes and IDs.
 
-This project implements a robust sentiment classification CLI application using a fine-tuned Transformer model and a self-healing mechanism powered by LangGraph.
+---
+## Output Video
+Below is the output video showcasing the player re-identification results:
 
-It performs inference using a primary model, evaluates confidence, and triggers fallback (via a user or a backup model) when necessary — prioritizing correctness over blind automation.
-## 🎥 Video Demo
-
-Watch the full demo of the project in action:
-
-🔗 [Click here to view the demo video](https://www.loom.com/share/d9b1389cb52045109932663fd5418841?sid=ff227e8f-e28f-46b8-878c-54c55feb7f36)
+<video controls width="640" height="360">
+  <source src="output.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 ---
 
-## 🚀 Live Demo
+## 🧠 Project Overview
 
-You can explore the optional Streamlit UI for this project at the link below:
-
-🔗 **[Launch the Live App](https://self-healing-classification-dag-cjmz7mvi5mytysocaztzsw.streamlit.app/)**
-
-
-> 💡 Note: The primary interface for this project is via the command-line (`cli.py`). The web UI is provided as an additional enhancement for demonstration and multi-input testing.
-
-
----
-## 📸 Project Screenshots
+- **Purpose**: Detect and track players in a video, ensuring consistent ID assignment for re-identification.
+- **Tools**: YOLOv8 for detection, `boxmot`/`ByteTrack` for tracking, OpenCV for video processing.
+- **Output**: Annotated video with player IDs.
 
 ---
 
-### 1. Training Process Screenshot
-This screenshot captures the model training phase, showing loss reduction and metrics improvement.
+## ✅ Prerequisites
 
-![Training Process](assets/Training%20Process%20Screenshot.png)
-
----
-
-### 2. CLI Output - Running `cli.py`
-These screenshots show the command-line execution of the `cli.py` script, including predicted labels, fallback logic, and user clarification for low-confidence predictions.
-
-![CLI Output 1](assets/CLI%20Output%20-%20Running%201.png)  
-![CLI Output 2](assets/CLI%20Output%20-%20Running%202.png)
+- Python 3.8 or higher  
+- Git (for cloning the repository)  
+- pip (Python package manager)
 
 ---
 
-### 3. Single or Multiple Input Options
-This screen shows that the UI allows both single and multiple text inputs for classification.
+## ⚙️ Installation
 
-![Single or Multiple Inputs](assets/Single%20or%20Multiple%20Input%20Options.png)
-
----
-
-### 4. Single Input Classification Output
-After providing a single input, the app returns the predicted label with high accuracy.
-
-![Single Input Output](assets/Single%20Input%20Classification%20Output.png)
-
----
-
-### 4A. Single Input Output Display
-This screenshot displays how the single input prediction is rendered clearly in the UI.
-
-![Single Input Output Display](assets/single%20input%20output.png)
-
----
-
-### 5. Multiple Inputs Classification Output
-Here, multiple sentences were input, and the app successfully predicted labels for each.
-
-![Multiple Inputs Output](assets/Multiple%20Inputs%20Classification%20Output.png)
-
----
-
-### 6. Graph Generated from All Inputs
-The output visualization is presented in a graph format to show label distribution or confidence scores.
-
-![Graph Output](assets/Graph%20Generated%20from%20All%20Inputs.png)
-
-
-
-
-
-
-## 📁 Project Structure
-
-```
-.
-├── cli.py                    # Main CLI interface
-├── model_utils.py            # Inference and backup model loading
-├── nodes.py                  # LangGraph nodes: ConfidenceCheck, Fallback
-├── fine_tuned_model/         # Pre-trained model directory (local or from HF)
-├── logs.txt                  # Logged predictions and fallbacks
-├── confidence_curve.png      # Auto-generated plot (optional)
-├── requirements.txt          # Python dependencies
-└── README.md                 # You're reading this!
-```
-
----
-
-## 🔧 Features
-
-- ✅ Fine-tuned DistilBERT for sentiment analysis (`tweet_eval` dataset)
-- ✅ LangGraph DAG: Inference → Confidence Check → Fallback
-- ✅ Confidence-based fallback with user clarification
-- ✅ Backup zero-shot classifier using `facebook/bart-large-mnli`
-- ✅ CLI logging (`logs.txt`)
-- ✅ Confidence curve plot
-- ✅ Fallback frequency summary
-
----
-
-## 🚀 Setup Instructions
-
-### 1. Clone the Repository
+### 📁 Clone the Repository
 
 ```bash
-git clone https://github.com/annie-2314/self-healing-classification-dag.git
-cd langgraph-sentiment-cli
+git clone https://github.com/annie-2314/player-re-identification-in-a-single-feed.git
+cd player-reid-project
 ```
 
-### 2. Create Virtual Environment (optional but recommended)
+### 🧪 Set Up a Virtual Environment (Recommended)
 
 ```bash
-python -m venv env
-source env/bin/activate     # On Windows: env\Scripts\activate
+python -m venv venv
+source venv/bin/activate     # On Windows: venv\Scripts\activate
 ```
 
-### 3. Install Dependencies
+### 📦 Install Dependencies
 
 ```bash
 pip install -r requirements.txt
-
- If you face version conflicts, run the following command to explicitly install compatible versions:
-
- pip install transformers==4.41.1 sentence-transformers==4.1.0
-
 ```
 
-### 4. Use Fine-Tuned Model
+### 📥 Install `boxmot`
 
-This project uses a locally fine-tuned `DistilBERT` model on the `tweet_eval` sentiment classification dataset.
+```bash
+pip install git+https://github.com/mikel-brostrom/yolo_tracking.git
+```
 
-If `fine_tuned_model/` is not present:
+### 📂 Download the Model
 
-1. Run the fine-tuning script to train your own model:
+Place the YOLO model file (`yolov8n.pt`) in the project directory (`D:\Projects\player_reid_project` or adjust the path in the script). If you have a different model (e.g., `yolov11_model.pt`), replace it accordingly. You can download `yolov8n.pt` from the Ultralytics YOLO repository or obtain the specific model from your instructor.
+
+---
+
+## 🎞 Prepare the Input Video
+
+Place your input video (`15sec_input_720p.mp4`) in the project directory. Ensure the path in the script matches:
+
+```python
+video_path = r"D:\Projects\player_reid_project\15sec_input_720p.mp4"
+```
+
+---
+
+## 🚀 Usage
+
+1. Activate the virtual environment (if not already active):
+
    ```bash
-   python train_model.py
+   source venv/bin/activate     # On Windows: venv\Scripts\activate
+   ```
 
+2. Run the script:
 
----
+   ```bash
+   python player_reid.py
+   ```
 
-## 🧪 How to Run the Classifier
+3. A video window will display the tracking process. Press `q` to quit.
 
-```bash
-python cli.py
-```
-
-### Example
-
-```bash
-Input: I liked the visuals but the story was dull.
-[InferenceNode] Predicted label: Neutral | Confidence: 52.13%
-[ConfidenceCheckNode] Confidence too low. Triggering fallback...
-[BackupModel] Trying zero-shot fallback model...
-[BackupModel] Predicted label: Negative | Confidence: 82.43%
-Final Label: Negative (From backup model)
-```
+4. The output video (`output.mp4`) will be saved in the project directory.
 
 ---
 
-## 📊 Bonus Features
+## 📁 Project Files
 
-### 📈 Confidence Curve
-
-After several inputs, a plot is generated:
-
-```
-confidence_curve.png
-```
-
-It shows how confident the model was across inputs.
-
-### 📉 Fallback Frequency Summary
-
-After exiting the CLI (`exit` command), you will see:
-
-```
-Fallback Stats:
-- Total Inputs: 10
-- Fallback Triggered: 4
-- Backup Model Used: 3
-- User Clarifications: 1
-```
+- `player_reid.py`: Main script for detection and tracking.
+- `requirements.txt`: List of Python dependencies (content below).
+- `yolov8n.pt`: YOLO model file (replace with your model if different).
+- `15sec_input_720p.mp4`: Input video file.
+- `output.mp4`: Output video with annotated player IDs.
 
 ---
 
-## 📁 Deliverables Summary
+## 🛠 Troubleshooting
 
-| Deliverable              | Status       |
-|--------------------------|--------------|
-| ✅ Fine-tuned model       | Included / Download link |
-| ✅ Source Code            | ✔️ All scripts provided |
-| ✅ README.md              | ✔️ You're reading it |
-| ✅ logs.txt               | Auto-generated |
-| ✅ Demo video              | 🔗 [Click here to view the demo video]([https://your-video-link.com](https://www.loom.com/share/c8e37178b1cd412c97bcac04c7ddc477?sid=9a163371-3f8a-4e00-8b2f-7f9ace34bab4)) |
+- **Installation Errors**: Ensure Git and pip are installed. If `boxmot` fails, verify your internet connection and retry the Git install command.
+- **Tracking Issues**: If no tracks are generated, check the `detections` shape in the console output. Reinstall dependencies if needed:
 
----
+  ```bash
+  pip install --upgrade ultralytics boxmot opencv-python numpy
+  ```
 
-## 🧠 Model Notes
-
-- Fine-tuned using HuggingFace `Trainer` on `tweet_eval` (sentiment)
-- LoRA-based training is possible with PEFT (optional)
-- Backup model uses `facebook/bart-large-mnli`
+- **Missed Players**: Lower the confidence threshold (`conf=0.1`) or area filter (`area > 100`) in the script. Request a better model (e.g., `yolov11_model.pt`) from your instructor if needed.
+- **Unpacking Errors**: If a `ValueError: too many values to unpack` occurs, ensure the script matches the `ByteTrack` output format (currently set for 8 elements).
 
 ---
 
-## 📦 Requirements
+## 🧾 Development Notes
 
-```
-streamlit>=1.38.0
-transformers>=4.45.0
-tokenizers>=0.19.1
-torch>=2.0.0
-langgraph==0.2.28
-langgraph-checkpoint==1.0.12
-huggingface_hub>=0.23.0
-matplotlib>=3.7.0
-scikit-learn>=1.3.0
-sentencepiece==0.2.0
-accelerate>=0.28.0
-peft>=0.10.0
-python-dotenv>=1.0.1
-```
+- The project was developed with assistance from Grok 3 (xAI) on June 23, 2025.
+- Initial issues included missing `setup.py` in the `boxmot` repository, resolved by installing directly from GitHub.
+- The script was updated to handle an 8-element `ByteTrack` output (`[x1, y1, x2, y2, track_id, conf, class_id, extra]`) due to a version mismatch.
 
 ---
 
+## 📌 Additional Instructions
+
+1. Save this entire content as `README.md` in your project directory (e.g., `D:\Projects\player_reid_project`).
+2. Extract the `requirements.txt` section (starting with `ultralytics==8.0.196`) and save it as `requirements.txt` in the same directory.
+3. Ensure `player_reid.py` (the script part) is saved as `player_reid.py` in the same directory, overwriting the previous version if needed.
+4. Update the paths in `player_reid.py` (`model_path`, `video_path`, `output_path`) to match your local setup.
+5. To share on GitHub, initialize a repository:
+
+   ```bash
+   git init
+   git add .
+   git commit -m "Initial commit with player re-id project"
+   git remote add origin https://github.com/annie-2314/player-re-identification-in-a-single-feed.git
+   git push -u origin main
+   ```
+
+6. Test the setup by cloning on another machine:
+
+   ```bash
+   git clone https://github.com/annie-2314/player-re-identification-in-a-single-feed.git
+   cd player-reid-project
+   python -m venv venv
+   venv\Scripts\activate  # On Windows
+   pip install -r requirements.txt
+   pip install git+https://github.com/mikel-brostrom/yolo_tracking.git
+   ```
+
+   Add `yolov8n.pt` and `15sec_input_720p.mp4`, then run:
+
+   ```bash
+   python player_reid.py
+   ```
+
+---
+
+## ✅ Confirmation
+
+- Confirm the files are saved correctly.
+- Run `pip install -r requirements.txt` and ensure no errors.
+- Verify the script runs and produces `output.mp4` with player IDs.
+- Let me know with “Done with Step 6” or share any issues!
