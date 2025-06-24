@@ -1,11 +1,25 @@
-output.mp4
+# Ignore virtual environments
+venv/
+env/
+
+# Ignore compiled files
+*.pyc
+__pycache__/
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore notebooks checkpoints
+.ipynb_checkpoints/
+
+# Ignore large model binaries
+*.dll
+*.lib
+*.pyd
+
+# Ignore data
+*.zip
+*.tar.gz
+*.h5
 *.pt
-*.mp4
-*.mp4
-*.pt
-output.mp4
-15sec_input_720p.mp4
-yolov11_model.pt
-output.mp4
-15sec_input_720p.mp4
-yolov11_model.pt
